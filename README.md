@@ -14,19 +14,19 @@ When you have cloned the Git repo, you will need to set the following variables
 * The AWS username and password
 * AWS Region 
 
-	AWS_USERNAME="AWS_USERNAME"
-	AWS_PASSWORD="AWS_PASSWORD"
-	REGION=ap-southeast-2
+		AWS_USERNAME="AWS_USERNAME"
+		AWS_PASSWORD="AWS_PASSWORD"
+		REGION=ap-southeast-2
 
 * You might have different AWS IAM Policies so the AWS Bucket username and password will/might be different. Change accordingly.
 
-	# Specify the AWS Bucket Username and password. 
-	BUCKET_USERNAME="AWS_USERNAME"
-	BUCKET_PASSWORD="AWS_PASSWORD"
+		# Specify the AWS Bucket Username and password. 
+		BUCKET_USERNAME="AWS_USERNAME"
+		BUCKET_PASSWORD="AWS_PASSWORD"
 
 * Platform options - By default, the script assumes that its a Linux RAW image. If you want to change this to Windows, then change the `PLATFORM` variable to `Windows`
 
-	PLATFORM=Linux
+		PLATFORM=Linux
 
 
 ### Running the script
