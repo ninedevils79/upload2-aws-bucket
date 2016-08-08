@@ -20,13 +20,13 @@ red=`tput setaf 1`
 reset=`tput sgr0`
 
 # Specify the AWS Username and password
-AWS_USERNAME="AWS_USERNAME"
-AWS_PASSWORD="AWS_PASSWORD"
+AWS_ACCESS_KEY="AWS_ACCESS_KEY"
+AWS_SECRET_KEY="AWS_SECRET_KEY"
 REGION=ap-southeast-2
 
 # Specify the AWS Bucket Username and password. 
-BUCKET_USERNAME="AWS_USERNAME"
-BUCKET_PASSWORD="AWS_PASSWORD"
+BUCKET_ACCESS_KEY="BUCKET_ACCESS_KEY"
+BUCKET_SECRET_KEY="BUCKET_SECRET_KEY"
 
 # ec2-import-tools options
 FORMAT=RAW
@@ -111,10 +111,10 @@ response=${response,}
 
 if [[ $response =~ ^(yes|y) ]]; then
   echo "Uploading to the AWS Bucket. This may take some time..."
-  ec2-import-instance -O ${AWS_USERNAME} -W ${AWS_PASSWORD} --region ${REGION} \
+  ec2-import-instance -O ${AWS_ACCESS_KEY} -W ${AWS_SECRET_KEY} --region ${REGION} \
   --instance-type ${INSTANCE_TYPE} --format ${FORMAT} --architecture ${ARCH} \
   --platform ${PLATFORM} --bucket ${BUCKET} \
-  -o ${BUCKET_USERNAME} -w ${BUCKET_PASSWORD} ${FILENAME}
+  -o ${BUCKET_ACCESS_KEY} -w ${BUCKET_SECRET_KEY} ${FILENAME}
 else
   echo "You have decided not to continue!"
   echo "Exiting"
